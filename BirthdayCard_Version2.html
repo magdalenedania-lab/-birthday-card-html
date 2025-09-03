@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Big mummy nurse ❤️</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    .center {
+      max-width: 480px;
+      margin: 40px auto;
+      text-align: center;
+    }
+    .card {
+      background: linear-gradient(135deg, #ffe7e7 60%, #f4e1ff 100%);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.13);
+      position: relative;
+      min-height: 420px;
+    }
+    .open-link {
+      display: inline-block;
+      margin-top: 120px;
+      padding: 18px 36px;
+      border-radius: 20px;
+      background: linear-gradient(90deg,#ffd6e0 0%,#cfefff 100%);
+      color: #6e2d70;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: background 0.2s;
+    }
+    .cake-area {
+      width: 220px;
+      margin: 16px auto 0;
+      position: relative;
+      height: 120px;
+    }
+    .cake {
+      width: 180px;
+      height: 80px;
+      background: #fff0d6;
+      border-radius: 0 0 32px 32px;
+      margin: 40px auto 0;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.11);
+      border: 4px solid #f6c9a7;
+      position: relative;
+    }
+    .cake-deco {
+      position: absolute;
+      top: 24px;
+      left: 18px;
+      width: 140px;
+      height: 8px;
+      background: repeating-linear-gradient(90deg,#f7b8e2 0 16px,#a7e7f6 16px 32px);
+      border-radius: 4px;
+    }
+    .candles-row {
+      position: absolute;
+      top: -38px;
+      left: 18px;
+      width: 140px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .candle {
+      position: relative;
+      margin: 0 4px;
+      cursor: pointer;
+      outline: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .candle-body {
+      width: 10px;
+      height: 34px;
+      background: #e2e3f8;
+      border-radius: 3px;
+      border: 1px solid #b9b1e4;
+    }
+    .candle.lit .candle-body {
+      background: #fff6d6;
+    }
+    .flame {
+      position: absolute;
+      top: -14px;
+      left: 1px;
+      width: 8px;
+      height: 12px;
+      background: radial-gradient(circle at 4px 6px, #ffe46c 60%, #fdc356 100%);
+      border-radius: 50% 50% 40% 40%;
+      box-shadow: 0 0 8px 3px #ffe46c;
+    }
+    .action-link {
+      margin-top: 38px;
+      padding: 10px 24px;
+      font-size: 1.1rem;
+      border-radius: 16px;
+      background: #f7b8e2;
+      color: #6e3797;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .prayer-box {
+      margin-top: 30px;
+      background: #fff8f8;
+      border-radius: 16px;
+      padding: 16px;
+      border: 2px dashed #ce3d66;
+      font-size: 1.08rem;
+      color: #6e3797;
+      box-shadow: 0 1px 7px rgba(0,0,0,0.08);
+      animation: fadeIn 0.6s;
+      text-align: left;
+    }
+    /* Confetti styles */
+    .confetti-piece {
+      position: absolute;
+      border-radius: 2px;
+      pointer-events: none;
+      opacity: 0;
+      animation: confettiDrop 1.6s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98);}
+      to { opacity: 1; transform: scale(1);}
+    }
+    @keyframes confettiDrop {
+      from { transform: translateY(-80px); opacity: 0.1;}
+      to { transform: translateY(0px); opacity: 1;}
+    }
+    .footer-tip {
+      text-align: center;
+      margin-top: 10px;
+      color: #7b6f86;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <a href="#" id="openCardLink" class="open-link" aria-label="Open birthday card for Big mummy nurse ❤️">
+      🎁 Click here to open the birthday card for Big mummy nurse ❤️
+    </a>
+
+    <div id="cardArea" class="card" style="display:none;">
+      <h1 style="font-size:2.2rem;margin-bottom:0;color:#ce3d66;">Happy Birthday!</h1>
+      <h2 style="margin:8px 0 14px 0;color:#6e3797;">Big mummy nurse ❤️</h2>
+      <div class="cake-area">
+        <div class="cake">
+          <div class="cake-deco"></div>
+        </div>
+        <div class="candles-row" id="candlesRow"></div>
+      </div>
+      <a href="#" id="prayerLink" class="action-link">Click to Open Birthday Prayer</a>
+      <div id="prayerBox" class="prayer-box" style="display:none;">
+        <strong>Birthday Prayer:</strong>
+        <p style="margin-top: 10px;">
+          May God bless you with long life, prosperity, and abundant joy.<br>
+          May you continue to touch lives with your kindness, wisdom, and love.<br>
+          Happy Birthday!
+        </p>
+      </div>
+      <div id="confettiArea"></div>
+      <div class="footer-tip">Tip: click on the candles to light them. When all are lit, confetti celebrates!</div>
+      <!-- Birthday sound -->
+      <audio id="bdayAudio" preload="auto">
+        <source src="https://cdn.pixabay.com/audio/2022/07/26/audio_123bfa4d93.mp3" type="audio/mp3">
+        <!-- Free "Happy Birthday" instrumental from Pixabay (license-free) -->
+      </audio>
+    </div>
+  </div>
+  <script>
+    // Elements
+    const openCardLink = document.getElementById('openCardLink');
+    const cardArea = document.getElementById('cardArea');
+    const candlesRow = document.getElementById('candlesRow');
+    const confettiArea = document.getElementById('confettiArea');
+    const prayerLink = document.getElementById('prayerLink');
+    const prayerBox = document.getElementById('prayerBox');
+    const bdayAudio = document.getElementById('bdayAudio');
+
+    // State
+    const CANDLE_COUNT = 5;
+    let candlesLit = Array(CANDLE_COUNT).fill(false);
+    let confettiShown = false;
+
+    function renderCandles() {
+      candlesRow.innerHTML = '';
+      for(let i=0; i < CANDLE_COUNT; i++) {
+        const candleDiv = document.createElement('div');
+        candleDiv.className = 'candle' + (candlesLit[i] ? ' lit' : '');
+        candleDiv.tabIndex = 0;
+        candleDiv.setAttribute('role', 'button');
+        candleDiv.setAttribute('aria-label', candlesLit[i] ? `Candle ${i+1} lit` : `Light candle ${i+1}`);
+        // Candle body
+        const bodyDiv = document.createElement('div');
+        bodyDiv.className = 'candle-body';
+        candleDiv.appendChild(bodyDiv);
+        // Flame
+        if (candlesLit[i]) {
+          const flameDiv = document.createElement('div');
+          flameDiv.className = 'flame';
+          candleDiv.appendChild(flameDiv);
+        }
+        candleDiv.onclick = () => {
+          if (!candlesLit[i]) {
+            candlesLit[i] = true;
+            renderCandles();
+            checkCandles();
+          }
+        };
+        candleDiv.onkeydown = (e) => {
+          if ((e.key === 'Enter' || e.key === ' ') && !candlesLit[i]) {
+            candlesLit[i] = true;
+            renderCandles();
+            checkCandles();
+          }
+        };
+        candlesRow.appendChild(candleDiv);
+      }
+    }
+
+    function checkCandles() {
+      if (candlesLit.every(Boolean) && !confettiShown) {
+        showConfetti();
+        confettiShown = true;
+        // Play sound on confetti trigger
+        if (bdayAudio) {
+          bdayAudio.currentTime = 0;
+          bdayAudio.play().catch(()=>{});
+        }
+      }
+    }
+
+    function showConfetti() {
+      confettiArea.innerHTML = '';
+      for(let i=0; i<45; i++) {
+        const piece = document.createElement('div');
+        piece.className = 'confetti-piece';
+        piece.style.left = (Math.random()*340+30)+'px';
+        piece.style.top = (Math.random()*60+20)+'px';
+        piece.style.width = (Math.random()*10+7)+'px';
+        piece.style.height = (Math.random()*7+4)+'px';
+        piece.style.background = `hsl(${Math.random()*360}, 90%, 60%)`;
+        piece.style.animationDelay = (Math.random()*0.8)+'s';
+        confettiArea.appendChild(piece);
+      }
+    }
+
+    openCardLink.onclick = function(e) {
+      e.preventDefault();
+      openCardLink.style.display = 'none';
+      cardArea.style.display = 'block';
+      renderCandles();
+    };
+
+    prayerLink.onclick = function(e) {
+      e.preventDefault();
+      prayerBox.style.display = 'block';
+      prayerLink.style.display = 'none';
+    };
+
+  </script>
+</body>
+</html>
